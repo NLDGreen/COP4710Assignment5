@@ -1,8 +1,27 @@
-'use strict';
-var http = require('http');
-var port = process.env.PORT || 1337;
+require('rootpath')();
+var express = require('express');
+var app = express();
+var cors = require('cors');
+var bodyParser = require('body-parser');
+var expressJwt = require('express-jwt');
+var config = require('config.json');
 
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(port);
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// use JWT auth to secure the api
+app.use(expressJwt({ secret: config.secret }).unless({ path: ['/users/authenticate', '/users/register'] }));
+
+// routes
+app.use('/users', require('./controllers/users.controller'));
+app.use('/university', require('./controllers/universitys.controller'));
+app.use('/events', require('./controllers/events.controller'));
+app.use('/rsos', require('./controllers/rsos.controller'));
+app.use('/comments', require('./controllers/comments.controller'));
+
+// start server
+var port = process.env.NODE_ENV === 'production' ? 80 : 4000;
+var server = app.listen(port, function () {
+    console.log('Server listening on port ' + port);
+});
