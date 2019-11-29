@@ -1,9 +1,0 @@
-{
-  "name": "cop4710-assignment5",
-  "version": "0.0.0",
-  "description": "COP4710Assignment5",
-  "main": "server.js",
-  "author": {
-    "name": ""
-  }
-}
