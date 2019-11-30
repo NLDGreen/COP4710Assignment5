@@ -15,7 +15,7 @@ app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 # Uncomment the line below to use the remote database as oppose to a henry one on localhost
 # app.config['MYSQL_DATABASE_HOST'] = '107.170.108.43'
 
-app.config['SECRET_KEY'] = 'A-UUID-123-GOES-4567-HERE'
+app.config['SECRET_KEY'] = '904558cf-92b9-49c8-a0a1-415e37535498'
 
 mysql = MySQL()
 mysql.init_app(app)
