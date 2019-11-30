@@ -9,11 +9,11 @@ app = Flask(__name__, static_url_path='/static')
 # MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'user'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'pw'
-app.config['MYSQL_DATABASE_DB'] = 'henry'
+app.config['MYSQL_DATABASE_DB'] = 'NLD'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
 # Uncomment the line below to use the remote database as oppose to a henry one on localhost
-# app.config['MYSQL_DATABASE_HOST'] = '107.170.108.43'
+# app.config['MYSQL_DATABASE_HOST'] = '127.0.0.1'
 
 app.config['SECRET_KEY'] = '904558cf-92b9-49c8-a0a1-415e37535498'
 
