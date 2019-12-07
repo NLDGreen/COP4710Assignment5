@@ -7,8 +7,8 @@ from flaskext.mysql import MySQL
 app = Flask(__name__, static_url_path='/static')
 
 # MySQL configurations
-app.config['MYSQL_DATABASE_USER'] = 'user'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'pw'
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'Nicholas97'
 app.config['MYSQL_DATABASE_DB'] = 'NLD'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
